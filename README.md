@@ -1,1 +1,2 @@
-# tank-optimization2
+# Optimization with Genetic Algorithm of a Coupled tanks system Controller
+This repository contains the code for ...
