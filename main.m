@@ -10,9 +10,9 @@ Pc = 0.5;
 Pm = 0.1;
 n_best = 1;
 size_I1 = 13;
-size_I2 = 7;
-size_out = 0;
-size_rules = 30;
+size_I2 = 13;
+size_out = 13;
+size_rules = 25;
 
 %% Geração da população inicial
 population = initialization(N, size_I1, size_I2, size_rules, size_out);
