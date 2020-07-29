@@ -1,5 +1,5 @@
 function [ sorted_population ] = fitness(population, N)
-    costs = zeros(N,51);
+    costs = zeros(N,65);
     for i = 1 : N
         fis = mamfis("NumInputs",2,"NumOutputs",1, "NumInputMFs",1, "NumOutputMFs",1);
         fis.Inputs(1).Name = "erro";
@@ -7,7 +7,7 @@ function [ sorted_population ] = fitness(population, N)
         fis.Inputs(2).Name = "der_erro";
         fis.Inputs(2).Range = [-5 5];
         fis.Outputs(1).Name = "saida";
-        fis.Outputs(1).Range = [-0.25 0.25];
+        fis.Outputs(1).Range = [-1 4];
         fis = addMF(fis,"erro","trimf",[-45 population(1,i) population(3,i)]);
         fis = addMF(fis,"erro","trimf",[population(2,i) population(4,i) population(6,i)]);
         fis = addMF(fis,"erro","trimf",[population(5,i) population(7,i) population(9,i)]);
@@ -70,7 +70,7 @@ function [ sorted_population ] = fitness(population, N)
         
         writeFIS(fis, 'fis');
         
-        simOut = sim('ModeloTanques', 'timeout', 200);
+        simOut = sim('Mamdani_PD', 'timeout', 200);
         niveis = simOut.get('Niveis');
         sinais = simOut.get('ControlSignal');
         

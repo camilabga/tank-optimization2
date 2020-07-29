@@ -10,7 +10,7 @@ function [ new_ind ] = mutation(individual)
     individual(d) = 5 * rand() - 1;
     
     I1 = sort(individual(1:13));
-    I2 = sort(individual(14:20));
+    I2 = sort(individual(14:26));
     OUT = sort(individual(52:64));
     
     new_ind = [I1 I2 individual(27:51) OUT];
